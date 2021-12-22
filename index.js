@@ -32,19 +32,24 @@ app.get("/",(req,res)=>{
 })
 //Get all Todos route
 app.get("/getAllTodos",async(req,res)=>{
+try {
     const todo= await TodoModel.find({});
-
-    if(todo){
+    res.status(200).json(todo)
+    
+} catch (error) {
+    
+}
+    // if(todo){
         
-       return res.status(200).json({
-            message:"Fetch all todos from database",
-            data:todo
-        })
-    }else{
-      return  res.status(400).json({
-            message:"Failed to fetch todos from database"
-        })
-    }
+    //    return res.status(200).json({
+    //         message:"Fetch all todos from database",
+    //         data:todo
+    //     })
+    // }else{
+    //   return  res.status(400).json({
+    //         message:"Failed to fetch todos from database"
+    //     })
+    // }
 })
 
 ///Create a new Todo into database
