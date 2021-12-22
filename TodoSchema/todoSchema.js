@@ -1,8 +1,6 @@
 // const mongoose= require("mongoose")
 import mongoose from "mongoose"
-import dateFormat from "dateformat";
-const now = new Date();
- let data=dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT");
+
 
 const {Schema,model}=mongoose
 
@@ -22,7 +20,7 @@ const todoSchema= Schema({
     },
     date:{
         type:Date,
-        default:data
+        default:Date.now
     }
 })
 
