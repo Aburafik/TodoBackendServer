@@ -36,7 +36,10 @@ app.get("/getAllTodos",async(req,res)=>{
 
     if(todo){
         
-       return todo
+       return res.status(200).json({
+            message:"Fetch all todos from database",
+            data:todo
+        })
     }else{
       return  res.status(400).json({
             message:"Failed to fetch todos from database"
