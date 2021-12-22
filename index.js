@@ -38,7 +38,6 @@ app.get("/getAllTodos",async(req,res)=>{
         
        return res.status(200).json({
             // message:"Fetch all todos from database",
-            data:todo
         })
     }else{
       return  res.status(400).json({
